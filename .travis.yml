@@ -1,21 +1,9 @@
-language: ruby
-
-# whitelist
-branches:  
-  only:
-    - master
-
-services:  
-    #Enable docker service inside travis
-    - docker
-
-before_install:  
-    - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-
-script:  
-    #build the image
-    - docker build --no-cache -t spboyer/people-service .
-    #tag the build
-    - docker tag spboyer/people-service:latest spboyer/people-service:v1
-    #push the image to the repository
-    - docker push spboyer/people-service
+language: CSharp
+mono:
+  - latest
+install:
+  - curl -sSL https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.sh | DNX_BRANCH=dev sh && source ~/.dnx/dnvm/dnvm.sh
+  - dnvm upgrade
+  - dnu restore
+script:
+  - dnx /home/travis/build/baraneetharan/webapi/project.json test -parallel none
