@@ -4,6 +4,7 @@ before_build:
 - cmd: dnu restore
 build_script:
 - cmd: dnu build
+test_script:
 - cmd: dnx test
 build:
   verbosity: normal
