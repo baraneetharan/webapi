@@ -17,11 +17,14 @@
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Debug" : "1.0.0-rc1-final",
-    "Microsoft.Net.Http": "2.2.7-beta"
+    "Microsoft.Net.Http": "2.2.7-beta",
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-rc1-build204"
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "web": "Microsoft.AspNet.Server.Kestrel",
+    "test": "xunit.runner.dnx"
   },
 
   "frameworks": {
