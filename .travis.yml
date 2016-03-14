@@ -6,7 +6,4 @@ install:
   - dnvm upgrade
   - dnu restore
 script:
-  - dnx /home/travis/build/baraneetharan/webapi/project.json web -parallel none
-  
-  
-  
+  - dnu /home/travis/build/baraneetharan/webapi/project.json build -parallel none
