@@ -4,8 +4,9 @@ before_build:
 - cmd: dnu restore
 build_script:
 - cmd: dnu build
-test_script:
-- cmd: dnx test
+- cmd: dnu publish "\webapi" --out DeployPackage --configuration Release --runtime dnx-clr-win-x86.1.0.0-beta6 --wwwroot-out "wwwroot" --quiet
+artifacts:
+- path: DeployPackage
+  name: DeployPackage
 build:
   verbosity: normal
-  publish_wap: true
