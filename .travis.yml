@@ -8,3 +8,4 @@ install:
 script:
   - dnu build
   - dnx test
+  - dnx web
