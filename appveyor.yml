@@ -4,8 +4,11 @@ before_build:
 - cmd: dnu restore
 build_script:
 - cmd: dnu build
+- cmd: dnu publish ./ --configuration Release -o AppOutput --runtime "active" --wwwroot "wwwroot" --wwwroot-out "wwwroot" --iis-command "web" --quiet
 test_script:
 - cmd: dnx test
+artifacts:
+ - path: /AppOutput
+   name: AppOutput
 build:
   verbosity: normal
-  publish_wap: true
