@@ -1,14 +1,12 @@
 version: 1.0.{build}
-cache: C:\Users\appveyor\.dnx\packages
+os: Visual Studio 2015
 before_build:
-- cmd: dnu restore
-build_script:
-- cmd: dnu build
-- cmd: dnu publish ./ --configuration Release -o AppOutput --runtime "active" --wwwroot "wwwroot" --wwwroot-out "wwwroot" --iis-command "web" --quiet
-test_script:
-- cmd: dnx test
-artifacts:
- - path: /AppOutput
-   name: AppOutput
+- cmd: >-
+    dnvm upgrade
+    dnvm upgrade -r coreclr
+    dnu restore
 build:
-  verbosity: normal
+  publish_wap: true
+  publish_nuget: true
+  publish_nuget_symbols: true
+  verbosity: minimal
