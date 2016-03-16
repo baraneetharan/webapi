@@ -8,7 +8,7 @@ test_script:
 - cmd: dnx test
 build:
   verbosity: normal
-after_build:
-- cmd: echo "Website is running"
-- dnx web
-- cmd: curl http://localhost:5000/api/contacts
+#after_build:
+#- cmd: echo "Website is running"
+#- dnx web
+#- cmd: curl http://localhost:5000/api/contacts
