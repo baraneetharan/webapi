@@ -10,4 +10,4 @@ build:
   verbosity: normal
 after_build:
 - dnx web
-- cmd: kill -SIGINT
+- cmd: echo "Website is running"
