@@ -11,4 +11,4 @@ build:
 after_build:
 - cmd: echo "Website is running"
 - dnx web
-curl http://localhost:5000/api/contacts
+- cmd: curl http://localhost:5000/api/contacts
