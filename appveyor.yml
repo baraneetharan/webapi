@@ -9,7 +9,4 @@ test_script:
 build:
   verbosity: normal
 after_build:
-- dnu publish \webapi -o AppOutput\webapi --configuration Release --no-source --runtime dnx-coreclr-win-x64.1.0.0-rc1-update1 --wwwroot "wwwroot" --wwwroot-out "wwwroot" --iis-command "web" --quiet
-- dir AppOutput\webapi\wwwroot
-- type AppOutput\webapi\wwwroot\web.config
-- '"C:\Program Files (x86)\IIS\Microsoft Web Deploy V3\msdeploy.exe" -source:IisApp=''%appveyor_build_folder%\AppOutput\webapi\wwwroot'' -dest:IisApp=''aspnet-webdeploy-good'',ComputerName=''https://aspnet-webdeploy-good.scm.azurewebsites.net/msdeploy.axd'',UserName=''$aspnet-webdeploy-good'',Password=''%aspnet_webdeploy_good_psw%'',IncludeAcls=''False'',AuthType=''Basic'' -verb:sync -enableLink:contentLibExtension  -enableRule:DoNotDeleteRule -retryAttempts:2'
+- dnx web
