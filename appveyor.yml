@@ -9,5 +9,5 @@ test_script:
 build:
   verbosity: normal
 after_build:
-- dnx web
 - cmd: echo "Website is running"
+- dnx web
